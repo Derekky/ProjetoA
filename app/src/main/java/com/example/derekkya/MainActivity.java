@@ -1,6 +1,8 @@
 package com.example.derekkya;
 
 import android.os.Bundle;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tv_latitude, tv_longitude, tv_precisao, tv_velocidade, tv_sensor, tv_atualizacao, tv_endereco;
+    Switch sw_locationUpdates, sw_gps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Inicialização dos objetos de texto
+        tv_latitude = findViewById(R.id.tv_lat);
+        tv_longitude = findViewById(R.id.tv_long);
+        tv_precisao = findViewById(R.id.tv_prec);
+        tv_velocidade = findViewById(R.id.tv_vel);
+        tv_sensor = findViewById(R.id.tv_sens);
+        tv_atualizacao = findViewById(R.id.tv_atuali);
+        tv_endereco = findViewById(R.id.tv_ender);
+        sw_gps = findViewById(R.id.switchGPS);
+        sw_locationUpdates = findViewById(R.id.switchUpdates);
 
         //Variáveis de Geolocalização
         //lat2 e lon2 equivale ao campus USP-Leste por enquanto
